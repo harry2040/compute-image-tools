@@ -145,7 +145,7 @@ the Disk JSON representation. Daisy uses the same representation with a few modi
 
 | Field Name | Type | Description of Modification |
 | - | - | - |
-| Name | string | If RealName is unset, the **literal** disk name will have a generated suffix for the running instance of the workflow. |
+| Name | string | If ExactName is unset, the **literal** disk name will have a generated suffix for the running instance of the workflow. |
 | SourceImage | string | Either image [partial URLs](#glossary-partialurl) or workflow-internal image names are valid. |
 | Type | string | *Optional.* Defaults to "pd-standard". Either disk type [partial URLs](#glossary-partialurl) or disk type names are valid. |
 
@@ -156,7 +156,7 @@ Added fields:
 | Project | string | *Optional.* Defaults to workflow's Project. The GCP project in which to create the disk. |
 | Zone | string | *Optional.* Defaults to workflow's Zone. The GCE zone in which to create the disk. |
 | NoCleanup | bool | *Optional.* Defaults to false. Set this to true if you do not want Daisy to automatically delete this disk when the workflow terminates. |
-| RealName | bool | *Optional.* If set Daisy will use this as the resource name instead generating a name. **Be advised**: this circumvents Daisy's efforts to prevent resource name collisions. |
+| ExactName | bool | *Optional.* If set Daisy will use this as the resource name instead generating a name. **Be advised**: this circumvents Daisy's efforts to prevent resource name collisions. |
 
 Example: the first is a standard PD disk created from a source image, the second
 is a blank PD SSD.
